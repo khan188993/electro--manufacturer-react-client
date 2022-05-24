@@ -1,0 +1,186 @@
+/*
+  Theme Name: Name - Arfan Khan Portfolio
+  Author: Md Arfan Khan
+  Support: khan188993@gmail.com
+  Description: Creative  HTML5 template.
+  Version: 1.0
+*/
+
+/* CSS Index
+-----------------------------------
+01. General Styles
+02. Preloader
+03. Navigation
+04. Header/Hero
+05. About
+06. Skills
+07. Why Choose Me
+08. Services
+09. Portfolio
+10. Testimonial
+11. Call to action
+12. Pricing Table
+13. Contact form
+14. Footer
+
+*/
+
+/* .my-class{
+    color:red;
+} */
+
+/*! ========= Google Font Add ===========  */
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&family=Poppins:ital,wght@0,300;0,400;0,500;0,700;0,800;0,900;1,600&display=swap');
+
+/*! ========= Root CSS Add ===========  */
+:root {
+   /* Colors  */
+   --my-primary: #01ffff;
+   --my-secondary: #ffffff;
+   --my-black: #000000;
+   --my-text-color: #000000;
+   --my-selection: #e5e5e5;
+
+   /* Font-Family  */
+   --poppins: 'Poppins', sans-serif;
+   --lato: 'Lato', sans-serif;
+   /*========Other Style========*/
+   --transition: all 0.3s ease;
+}
+/*! ========= 1) Theme Default CSS ===========  */
+* {
+   padding: 0;
+   margin: 0;
+   box-sizing: border-box;
+}
+
+html {
+   scroll-behavior: smooth;
+}
+
+body {
+   font-family: var(--poppins);
+   font-size: 16px;
+   color: var(--text-color);
+}
+
+p {
+   font-size: 16px;
+   font-weight: 400;
+   line-height: 30px;
+   font-family: var(--Lato);
+   word-spacing: 3px;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+   font-family: var(--poppins);
+   font-weight: normal;
+   font-weight: 400;
+}
+
+section {
+   padding: 50px 0;
+   overflow-x: hidden;
+}
+
+img {
+   width: 100%;
+   height: auto;
+}
+
+/*! ========= Section Title ===========  */
+.section-title {
+   text-align: center;
+   margin-bottom: 75px;
+}
+
+.section-title h2 {
+   font-size: 30px;
+}
+
+/*! ========= Common Button ===========  */
+.mybtn {
+   display: inline-block;
+   border: 3px solid var(--my-primary) !important;
+   padding: 7px 15px;
+   font-weight: 700;
+   text-transform: uppercase;
+   color: var(--my-black) !important;
+   background: var(--my-primary);
+   border-radius: 5px;
+   -webkit-transition: var(--transition);
+   transition: var(--transition);
+}
+
+.mybtn:hover {
+   background: transparent;
+   color: var(--my-primary) !important;
+}
+
+.mybtn-2 {
+   background: var(--black);
+   color: var(--aqua) !important;
+}
+
+.mybtn-2:hover {
+   background: var(--aqua);
+   color: var(--black) !important;
+}
+
+a {
+   -webkit-transition: all 0.3s ease-out 0s;
+   transition: all 0.3s ease-out 0s;
+   cursor: pointer;
+}
+
+.delete-margin {
+   margin: -15px 0;
+}
+
+.column-margin > div {
+   margin: 15px 0;
+}
+
+/*! ========= Header Part Start ===========  */
+.menu li,
+.menu div {
+   margin-left: 20px;
+}
+
+.menu li a {
+   background-color: transparent;
+   color: var(--my-danger);
+}
+
+@media screen and (max-width: 1010) {
+   .menu {
+      position: absolute;
+      top: 17%;
+      right: 50px;
+      z-index: 999;
+      background: white;
+      border: 2px solid orange;
+   }
+}
+
+/* banner part */
+.hero-banner .carousel-item {
+   background: aquamarine;
+}
+
+.hero-banner .content {
+   border: 1px solid orange;
+   width: 48%;
+   margin-top: 80px;
+   margin-left: 40px;
+}
+
+.business-icons svg{
+	width:100px;
+	height: 100px;
+}
