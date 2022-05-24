@@ -1,44 +1,50 @@
 import React, { useState } from 'react';
-import { Link, NavLink } from 'react-router-dom';
+import { Link, NavLink, useLocation, useNavigate } from 'react-router-dom';
 
 const Header = () => {
+   const navigate = useNavigate();
+   const { pathname } = useLocation();
    const [toggleMenu, setToggleMenu] = useState(false);
 
    const menuItems = (
       <>
-         <li className='flex items-center'>
-            <Link to="/">About</Link>
+         <li className="flex items-center">
+            <Link to="/about">About</Link>
          </li>
-         <li className='flex items-center'>
-            <Link to="/">Blogs</Link>
+         <li className="flex items-center">
+            <Link to="/blogs">Blogs</Link>
          </li>
-         <li className='flex items-center'>
-            <Link to="/">Manage Products</Link>
+         <li className="flex items-center">
+            <Link to="/manage-products">Manage Products</Link>
          </li>
-         <li className='flex items-center'>
-            <button className="btn btn-primary text-base-100">Login</button>
+         <li className="flex items-center">
+            <Link to="/dashboard">Dashboard</Link>
          </li>
-         <li className='flex items-center'>
-            <button className="btn btn-primary text-base-100">Logout</button>
+         <li className="flex items-center">
+            <button onClick={() => navigate('/login')} className="btn btn-primary text-base-100">
+               Login
+            </button>
          </li>
-         <li className='flex items-center'>
+         <li className="flex items-center">
+            <button onClick={() => navigate('/singup')} className="btn btn-primary text-base-100">
+               Logout
+            </button>
+         </li>
+         <li className="flex items-center">
             <Link to="/" className="btn btn-secondary">
                Arfan Khan
             </Link>
-         </li>
-         <li className='flex items-center'>
             <div class="avatar">
                <div class="w-10 rounded-full">
                   <img src="https://api.lorem.space/image/face?hash=47449" />
                </div>
             </div>
          </li>
-         <li className='flex items-center'></li>
       </>
    );
 
    return (
-      <header className='bg-accent'>
+      <header className="bg-accent">
          <div className="navbar px-12">
             {/* DropDown Menu */}
             <div className="dropdown">
@@ -57,6 +63,11 @@ const Header = () => {
                   Electro<span className="text-primary">.Pro</span>
                </Link>
             </div>
+            {pathname == '/dashboard' && (
+               <label for="my-drawer-2" class="btn btn-primary lg:hidden">
+                  Open Dashboard
+               </label>
+            )}
             <div className="flex-none hidden lg:flex">
                <ul className="my-menu menu menu-horizontal p-0">{menuItems}</ul>
             </div>
