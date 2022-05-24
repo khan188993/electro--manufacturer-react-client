@@ -1,33 +1,43 @@
 import React from 'react';
 import { Route, Routes } from 'react-router-dom';
 import Header from './Components/Header/Header';
-import './css/App.css'
+import './css/App.css';
 import AboutPage from './pages/AboutPage/AboutPage';
 import BlogPage from './pages/BlogPage/BlogPage';
 import Dashboard from './pages/Dashboard/Dashboard';
+import MakeAdmin from './pages/Dashboard/MakeAdmin/MakeAdmin';
 import ManageProducts from './pages/Dashboard/ManageProducts/ManageProducts';
+import MyOrder from './pages/Dashboard/MyOrder/MyOrder';
+import MyProfile from './pages/Dashboard/MyProfile/MyProfile';
 import Home from './pages/Home/Home';
 import LoginPage from './pages/LoginPage/LoginPage';
+import MyPortfolio from './pages/MyPortfolio/MyPortfolio';
 import NotFoundPage from './pages/NotFoundPage/NotFoundPage';
 import PurchasePage from './pages/PurchasePage/PurchasePage';
 import SignUpPage from './pages/SignUpPage/SignUpPage';
 const App = () => {
    return (
-      <div className='main-wrapper'>
+      <div className="main-wrapper">
          {/* <h1 className='my-class'>React Learning Practice code Running.</h1> */}
-         <Header/>
+         <Header />
          {/* Routes  */}
          <Routes>
-          <Route path="/" element={<Home/>}></Route>
-          <Route path="/about" element={<AboutPage/>}></Route>
-          <Route path="/blogs" element={<BlogPage/>}></Route>
-          <Route path="/dashboard" element={<Dashboard/>}></Route>
-          <Route path="/manage-products" element={<ManageProducts/>}></Route>
-          <Route path="/login" element={<LoginPage/>}></Route>
-          <Route path="/purchase" element={<PurchasePage/>}></Route>
-          <Route path="/signup" element={<SignUpPage/>}></Route>
-          <Route path="*" element={<NotFoundPage/>}></Route>
-      </Routes>
+            <Route path="/" element={<Home />}></Route>
+            <Route path="/about" element={<AboutPage />}></Route>
+            <Route path="/blogs" element={<BlogPage />}></Route>
+            <Route path="/my-portfolio" element={<MyPortfolio />}></Route>
+            <Route path="dashboard" element={<Dashboard />}>
+               <Route path="my-profile" element={<MyProfile/>}></Route>
+               <Route path="my-orders" element={<MyOrder/>}></Route>
+               <Route path="make-admin" element={<MakeAdmin/>}></Route>
+               <Route path="manage-products" element={<ManageProducts />}></Route>
+            </Route>
+            
+            <Route path="/login" element={<LoginPage />}></Route>
+            <Route path="/purchase" element={<PurchasePage />}></Route>
+            <Route path="/signup" element={<SignUpPage />}></Route>
+            <Route path="*" element={<NotFoundPage />}></Route>
+         </Routes>
       </div>
    );
 };

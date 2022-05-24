@@ -15,7 +15,7 @@ const Header = () => {
             <Link to="/blogs">Blogs</Link>
          </li>
          <li className="flex items-center">
-            <Link to="/manage-products">Manage Products</Link>
+            <Link to="/my-portfolio">Portfolio</Link>
          </li>
          <li className="flex items-center">
             <Link to="/dashboard">Dashboard</Link>
