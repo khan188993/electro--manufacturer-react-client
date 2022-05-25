@@ -1,17 +1,42 @@
-import React from 'react'
-import { useNavigate } from 'react-router-dom'
+import React from 'react';
+import { useAuthState, useSignInWithGoogle } from 'react-firebase-hooks/auth';
+import { useNavigate } from 'react-router-dom';
+import auth from '../../Firebase/Firebase.init';
 
 const SignUpPage = () => {
-    const navigate = useNavigate();
-    return (
-        <section className="login px-12">
+   const [user, loading, error] = useAuthState(auth);
+   const [signInWithGoogle, gUser, gLoading, gError] = useSignInWithGoogle(auth);
+   const navigate = useNavigate();
+
+   if (error || gError) {
+      return (
+        <div>
+          <p>Error: {error.message}</p>
+        </div>
+      );
+    }
+
+    if (loading || gLoading) {
+      return <p>Loading...</p>;
+    }
+
+    if (user) {
+      return (
+        <div>
+          <p>Signed In User: {user.displayName}</p>
+        </div>
+      );
+    }
+
+   return (
+      <section className="login px-12">
          <div className="section-title">
             <h2>Sign Up</h2>
          </div>
          <div className="">
             {/* AiFillFlag AiFillProject IoIosPeople BsStars */}
             <div className="form">
-               <form action="" className='flex flex-col items-center'>
+               <form action="" className="flex flex-col items-center">
                   <input type="text" placeholder="Enter Your Name" class=" mb-8 input input-bordered input-primary w-full lg:w-[500px]" />
                   <input type="email" placeholder="Enter Your Email" class=" mb-8 input input-bordered input-primary w-full lg:w-[500px]" />
                   <input type="password" placeholder="Enter Your Password" class=" mb-8 input input-bordered input-primary w-full lg:w-[500px]" />
@@ -29,12 +54,12 @@ const SignUpPage = () => {
                   </div>
                </div>
                <div className="google text-center">
-                  <button className="btn btn-accent btn-wide">Sign UP With Google</button>
+                  <button onClick={()=>signInWithGoogle()} className="btn btn-accent btn-wide">Sign UP With Google</button>
                </div>
             </div>
          </div>
       </section>
-    )
-}
+   );
+};
 
-export default SignUpPage
+export default SignUpPage;
