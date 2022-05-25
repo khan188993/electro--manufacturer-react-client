@@ -6,8 +6,10 @@ import Footer from '../../Components/Footer/Footer';
 import HeroBanner from '../../Components/HeroBanner/HeroBanner';
 import Products from '../../Components/Products/Products';
 import Reviews from '../../Components/Reviews/Reviews';
+import useAppContext from '../../Context/useAppContext';
 
 const Home = () => {
+   // console.log(useAppContext());
    return (
       <div>
          {/* header,banner,reviews,products,footer,business summery, */}

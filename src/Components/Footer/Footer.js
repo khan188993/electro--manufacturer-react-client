@@ -1,6 +1,8 @@
 import React from 'react';
+import useAppContext from '../../Context/useAppContext';
 
 const Footer = () => {
+
    return (
       <footer class="footer p-10 bg-neutral text-neutral-content">
          <div>
