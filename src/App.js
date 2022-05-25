@@ -1,5 +1,6 @@
 import React from 'react';
 import { Route, Routes } from 'react-router-dom';
+import { useQuery } from 'react-query';
 import Header from './Components/Header/Header';
 import AppContext from './Context/AppContext';
 import './css/App.css';
@@ -20,6 +21,12 @@ import SignUpPage from './pages/SignUpPage/SignUpPage';
 import PrivateAuth from './PrivateRoute/PrivateAuth';
 const App = () => {
 
+   //use query fetch product data 
+   // const proxy = 'http://localhost:5000';
+   const { data: products, isLoading: productLoading , refetch: productRefetch } = useQuery('products', () => fetch(`http://localhost:5000/products`)
+        .then(res => res.json()))
+   
+   console.log(products);
 
    return (
       <AppContext.Provider value={{ data1:234, data2:"arfan" }}>
