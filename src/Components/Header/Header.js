@@ -1,16 +1,18 @@
 import { signOut } from 'firebase/auth';
 import React, { useState } from 'react';
+import { useAuthState } from 'react-firebase-hooks/auth';
 import { Link, NavLink, useLocation, useNavigate } from 'react-router-dom';
 import auth from '../../Firebase/Firebase.init';
 
 const Header = () => {
    const navigate = useNavigate();
    const { pathname } = useLocation();
+   const [user] = useAuthState(auth);
    const [toggleMenu, setToggleMenu] = useState(false);
 
-   const handleLogOut = ()=>{
-      signOut(auth)
-  }
+   const handleLogOut = () => {
+      signOut(auth);
+   };
 
    const menuItems = (
       <>
@@ -23,29 +25,37 @@ const Header = () => {
          <li className="flex items-center">
             <Link to="/my-portfolio">Portfolio</Link>
          </li>
-         <li className="flex items-center">
-            <Link to="/dashboard">Dashboard</Link>
-         </li>
-         <li className="flex items-center">
-            <button onClick={() => navigate('/login')} className="btn btn-primary text-base-100">
-               Login
-            </button>
-         </li>
-         <li className="flex items-center">
-            <button onClick={() => handleLogOut()} className="btn btn-primary text-base-100">
-               Logout
-            </button>
-         </li>
-         <li className="flex items-center">
-            <Link to="/" className="btn btn-secondary">
-               Arfan Khan
-            </Link>
-            <div class="avatar">
-               <div class="w-10 rounded-full">
-                  <img src="https://api.lorem.space/image/face?hash=47449" />
-               </div>
-            </div>
-         </li>
+         {user && (
+            <>
+               <li className="flex items-center">
+                  <Link to="/dashboard">Dashboard</Link>
+               </li>
+               <li className="flex items-center">
+                  <button onClick={() => handleLogOut()} className="btn btn-primary text-base-100">
+                     Logout
+                  </button>
+               </li>
+               <li className="flex items-center">
+                  <Link to="/" className="btn btn-secondary">
+                     {user.displayName}
+                  </Link>
+                  <div class="avatar">
+                     <div class="w-10 rounded-full">
+                        <img src={user.photoURL || "https://api.lorem.space/image/face?hash=47449"} />
+                     </div>
+                  </div>
+               </li>
+            </>
+         )}
+         {!user && (
+            <>
+               <li className="flex items-center">
+                  <button onClick={() => navigate('/login')} className="btn btn-primary text-base-100">
+                     Login
+                  </button>
+               </li>
+            </>
+         )}
       </>
    );
 

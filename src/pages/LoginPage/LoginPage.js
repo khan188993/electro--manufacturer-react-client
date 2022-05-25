@@ -3,6 +3,7 @@ import { useAuthState, useSignInWithEmailAndPassword, useSignInWithGoogle } from
 import { useNavigate, useLocation } from 'react-router-dom';
 import { useForm } from 'react-hook-form';
 import auth from '../../Firebase/Firebase.init';
+import Loading from '../../Components/Loading/Loading';
 
 const LoginPage = () => {
    const [signInWithGoogle, gUser, gLoading, gError] = useSignInWithGoogle(auth);
@@ -26,7 +27,7 @@ const LoginPage = () => {
    }, [user, gUser, from, navigate]);
 
    if (loading || gLoading) {
-      return <h1>Loading from login page...</h1>;
+      return <Loading/>;
    }
 
    if (error || gError) {
