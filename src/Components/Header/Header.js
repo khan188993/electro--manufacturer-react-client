@@ -1,10 +1,16 @@
+import { signOut } from 'firebase/auth';
 import React, { useState } from 'react';
 import { Link, NavLink, useLocation, useNavigate } from 'react-router-dom';
+import auth from '../../Firebase/Firebase.init';
 
 const Header = () => {
    const navigate = useNavigate();
    const { pathname } = useLocation();
    const [toggleMenu, setToggleMenu] = useState(false);
+
+   const handleLogOut = ()=>{
+      signOut(auth)
+  }
 
    const menuItems = (
       <>
@@ -26,7 +32,7 @@ const Header = () => {
             </button>
          </li>
          <li className="flex items-center">
-            <button onClick={() => navigate('/singup')} className="btn btn-primary text-base-100">
+            <button onClick={() => handleLogOut()} className="btn btn-primary text-base-100">
                Logout
             </button>
          </li>

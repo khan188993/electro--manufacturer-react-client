@@ -1,32 +1,39 @@
 import React from 'react';
 import { useAuthState, useSignInWithGoogle } from 'react-firebase-hooks/auth';
+import { useForm } from 'react-hook-form';
 import { useNavigate } from 'react-router-dom';
 import auth from '../../Firebase/Firebase.init';
 
 const SignUpPage = () => {
-   const [user, loading, error] = useAuthState(auth);
+   
    const [signInWithGoogle, gUser, gLoading, gError] = useSignInWithGoogle(auth);
+   const [createUserWithEmailAndPassword, user, loading, error] = useCreateUserWithEmailAndPassword(auth);
+   const {
+      register,
+      formState: { errors },
+      handleSubmit,
+   } = useForm();
    const navigate = useNavigate();
 
    if (error || gError) {
       return (
-        <div>
-          <p>Error: {error.message}</p>
-        </div>
+         <div>
+            <p>Error: {error.message}</p>
+         </div>
       );
-    }
+   }
 
-    if (loading || gLoading) {
+   if (loading || gLoading) {
       return <p>Loading...</p>;
-    }
+   }
 
-    if (user) {
+   if (user) {
       return (
-        <div>
-          <p>Signed In User: {user.displayName}</p>
-        </div>
+         <div>
+            <p>Signed In User: {user.displayName}</p>
+         </div>
       );
-    }
+   }
 
    return (
       <section className="login px-12">
@@ -54,7 +61,9 @@ const SignUpPage = () => {
                   </div>
                </div>
                <div className="google text-center">
-                  <button onClick={()=>signInWithGoogle()} className="btn btn-accent btn-wide">Sign UP With Google</button>
+                  <button onClick={() => signInWithGoogle()} className="btn btn-accent btn-wide">
+                     Sign UP With Google
+                  </button>
                </div>
             </div>
          </div>

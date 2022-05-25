@@ -16,6 +16,7 @@ import MyPortfolio from './pages/MyPortfolio/MyPortfolio';
 import NotFoundPage from './pages/NotFoundPage/NotFoundPage';
 import PurchasePage from './pages/PurchasePage/PurchasePage';
 import SignUpPage from './pages/SignUpPage/SignUpPage';
+import PrivateAuth from './PrivateRoute/PrivateAuth';
 const App = () => {
    return (
       <div className="main-wrapper">
@@ -28,7 +29,7 @@ const App = () => {
             <Route path="/blogs" element={<BlogPage />}></Route>
             <Route path="/blog-details/:title" element={<BlogDetails />}></Route>
             <Route path="/my-portfolio" element={<MyPortfolio />}></Route>
-            <Route path="dashboard" element={<Dashboard />}>
+            <Route path="dashboard" element={<PrivateAuth><Dashboard/></PrivateAuth>}>
                <Route path="my-profile" element={<MyProfile/>}></Route>
                <Route path="my-orders" element={<MyOrder/>}></Route>
                <Route path="make-admin" element={<MakeAdmin/>}></Route>
@@ -36,7 +37,7 @@ const App = () => {
             </Route>
             
             <Route path="/login" element={<LoginPage />}></Route>
-            <Route path="/purchase" element={<PurchasePage />}></Route>
+            <Route path="/purchase" element={<PrivateAuth><PurchasePage /></PrivateAuth>}></Route>
             <Route path="/signup" element={<SignUpPage />}></Route>
             <Route path="*" element={<NotFoundPage />}></Route>
          </Routes>
