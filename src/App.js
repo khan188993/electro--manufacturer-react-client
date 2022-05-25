@@ -3,6 +3,7 @@ import { Route, Routes } from 'react-router-dom';
 import Header from './Components/Header/Header';
 import './css/App.css';
 import AboutPage from './pages/AboutPage/AboutPage';
+import BlogDetails from './pages/BlogDetails/BlogDetails';
 import BlogPage from './pages/BlogPage/BlogPage';
 import Dashboard from './pages/Dashboard/Dashboard';
 import MakeAdmin from './pages/Dashboard/MakeAdmin/MakeAdmin';
@@ -25,6 +26,7 @@ const App = () => {
             <Route path="/" element={<Home />}></Route>
             <Route path="/about" element={<AboutPage />}></Route>
             <Route path="/blogs" element={<BlogPage />}></Route>
+            <Route path="/blog-details/:title" element={<BlogDetails />}></Route>
             <Route path="/my-portfolio" element={<MyPortfolio />}></Route>
             <Route path="dashboard" element={<Dashboard />}>
                <Route path="my-profile" element={<MyProfile/>}></Route>
