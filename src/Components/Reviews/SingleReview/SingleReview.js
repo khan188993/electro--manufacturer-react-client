@@ -8,12 +8,6 @@ const SingleReview = ({ review }) => {
    for(let i = 0; i<review.review_rating;i++){
       rating.push('rating');
    }
-   // review_desc: "best website"
-   // review_rating: 2
-   // user_email: "khan188993@gmail.com"
-   // user_imgUrl: "https://lh3.googleusercontent.com/a-/AOh14Gh5efQRY5PzYiFkKB78VuqvL4N1fDoLVXIsHpJbSg=s96-c"
-   // user_name: "dipu Khan"
-   // _id: "628f380d01fa9257176bfbe6"
    return (
       <div class="card w-full bg-base-100 shadow-xl">
          <div className="review-img text-center">

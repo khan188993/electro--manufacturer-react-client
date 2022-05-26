@@ -12,6 +12,7 @@ const Header = () => {
 
    const handleLogOut = () => {
       signOut(auth);
+      navigate('/')
    };
 
    const menuItems = (
