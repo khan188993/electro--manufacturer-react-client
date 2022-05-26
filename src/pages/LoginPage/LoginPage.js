@@ -5,7 +5,7 @@ import { useForm } from 'react-hook-form';
 import auth from '../../Firebase/Firebase.init';
 import toast from 'react-hot-toast';
 import Loading from '../../Components/Loading/Loading';
-// https://electro-product-1020.herokuapp.com/
+
 const LoginPage = () => {
    const [signInWithGoogle, gUser, gLoading, gError] = useSignInWithGoogle(auth);
    const [signInWithEmailAndPassword, user, loading, error] = useSignInWithEmailAndPassword(auth);
