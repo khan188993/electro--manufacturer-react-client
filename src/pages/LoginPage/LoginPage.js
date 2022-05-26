@@ -3,6 +3,7 @@ import { useAuthState, useSignInWithEmailAndPassword, useSignInWithGoogle } from
 import { useNavigate, useLocation } from 'react-router-dom';
 import { useForm } from 'react-hook-form';
 import auth from '../../Firebase/Firebase.init';
+import toast from 'react-hot-toast';
 import Loading from '../../Components/Loading/Loading';
 
 const LoginPage = () => {
@@ -41,6 +42,7 @@ const LoginPage = () => {
    const onSubmit = (data) => {
       console.log(data);
       signInWithEmailAndPassword(data.email, data.password);
+      
    };
 
    console.log('user',gUser);

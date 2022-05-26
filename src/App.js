@@ -20,6 +20,7 @@ import PurchasePage from './pages/PurchasePage/PurchasePage';
 import SignUpPage from './pages/SignUpPage/SignUpPage';
 import PrivateAuth from './PrivateRoute/PrivateAuth';
 import Loading from './Components/Loading/Loading';
+import { Toaster } from 'react-hot-toast';
 import ManageAllOrder from './pages/Dashboard/ManageAllOrders/ManageAllOrder';
 import ManageUsers from './pages/Dashboard/ManageUsers/ManageUsers';
 import AddReview from './pages/Dashboard/AddReview/AddReview';
@@ -44,6 +45,7 @@ const App = () => {
          <div className="main-wrapper">
             {/* <h1 className='my-class'>React Learning Practice code Running.</h1> */}
             <Header />
+            <Toaster />
             {/* Routes  */}
             <Routes>
                <Route path="/" element={<Home />}></Route>
