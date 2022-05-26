@@ -1,16 +1,32 @@
 import React from 'react';
 
-const OrderRow = ({order,index}) => {
-    console.log(order);
+const OrderRow = ({ order, index,orderRefetch }) => {
+   //deleting order
+   const deleteOrder = (id) => {
+      console.log(id);
+      fetch(`http://localhost:5000/delete-order/${id}`, {
+         method: 'DELETE',
+      })
+         .then((res) => res.json())
+         .then((data) => {
+             console.log(data);
+             orderRefetch();
+         });
+   };
    return (
       <tr>
-         <th>{index+1}</th>
+         <th>{index + 1}</th>
          <td>{order?.buyer_name}</td>
          <td>{order?.buyer_email}</td>
          <td>{order?.product_name}</td>
          <td>{order?.order_quantity}</td>
          <td>{order?.product_per_price}</td>
          <td>{order?.total_price}</td>
+         <td>
+            <button onClick={() => deleteOrder(order?.product_id)} class="btn btn-error">
+               Delete Order
+            </button>
+         </td>
       </tr>
    );
 };

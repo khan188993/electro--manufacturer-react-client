@@ -4,7 +4,7 @@ import { Link, Outlet } from 'react-router-dom';
 import auth from '../../Firebase/Firebase.init';
 
 const Dashboard = () => {
-   const [isAdmin, setisAdmin] = useState(false);
+   const [isAdmin, setIsAdmin] = useState(true);
    const [user] = useAuthState(auth);
 
    return (

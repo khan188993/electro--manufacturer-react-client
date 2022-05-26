@@ -29,11 +29,12 @@ const MyOrder = () => {
                      <th>Order Quantity</th>
                      <th>Price</th>
                      <th>Total Price</th>
+                     <th>Action</th>
                   </tr>
                </thead>
                <tbody>
                    {
-                       orders.map((order,index)=><OrderRow key={order._id} order={order} index={index}/>)
+                       orders.map((order,index)=><OrderRow orderRefetch={orderRefetch} key={order._id} order={order} index={index}/>)
                    }
                </tbody>
             </table>
