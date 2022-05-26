@@ -21,6 +21,12 @@ const Dashboard = () => {
                      <Link to='/dashboard/my-orders' className='btn btn-accent'>My Orders</Link>
                   </li>
                   <li className='mb-4'>
+                     <Link to='/dashboard/manage-all-order' className='btn btn-accent'>Manage All Orders</Link>
+                  </li>
+                  <li className='mb-4'>
+                     <Link to='/dashboard/manage-users' className='btn btn-accent'>Manage Users</Link>
+                  </li>
+                  <li className='mb-4'>
                      <Link to='/dashboard/make-admin' className='btn btn-accent'>Make Admin</Link>
                   </li>
                   <li className='mb-4'>

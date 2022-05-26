@@ -25,11 +25,11 @@ const Header = () => {
          <li className="flex items-center">
             <Link to="/my-portfolio">Portfolio</Link>
          </li>
+         <li className="flex items-center">
+            <Link to="/dashboard">Dashboard</Link>
+         </li>
          {user && (
             <>
-               <li className="flex items-center">
-                  <Link to="/dashboard">Dashboard</Link>
-               </li>
                <li className="flex items-center">
                   <button onClick={() => handleLogOut()} className="btn btn-primary text-base-100">
                      Logout
@@ -41,7 +41,7 @@ const Header = () => {
                   </Link>
                   <div class="avatar">
                      <div class="w-10 rounded-full">
-                        <img src={user.photoURL || "https://api.lorem.space/image/face?hash=47449"} />
+                        <img src={user.photoURL || 'https://api.lorem.space/image/face?hash=47449'} />
                      </div>
                   </div>
                </li>

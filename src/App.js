@@ -19,17 +19,26 @@ import NotFoundPage from './pages/NotFoundPage/NotFoundPage';
 import PurchasePage from './pages/PurchasePage/PurchasePage';
 import SignUpPage from './pages/SignUpPage/SignUpPage';
 import PrivateAuth from './PrivateRoute/PrivateAuth';
-const App = () => {
+import Loading from './Components/Loading/Loading';
+import ManageAllOrder from './pages/Dashboard/ManageAllOrders/ManageAllOrder';
+import ManageUsers from './pages/Dashboard/ManageUsers/ManageUsers';
 
+const App = () => {
    //use query fetch product data 
    // const proxy = 'http://localhost:5000';
    const { data: products, isLoading: productLoading , refetch: productRefetch } = useQuery('products', () => fetch(`http://localhost:5000/products`)
         .then(res => res.json()))
+
    
-   console.log(products);
+
+   if(productLoading){
+      return <Loading/>
+   }
+
+
 
    return (
-      <AppContext.Provider value={{ data1:234, data2:"arfan" }}>
+      <AppContext.Provider value={{ products, productRefetch}}>
          <div className="main-wrapper">
             {/* <h1 className='my-class'>React Learning Practice code Running.</h1> */}
             <Header />
@@ -49,6 +58,8 @@ const App = () => {
                   }
                >
                   <Route path="my-profile" element={<MyProfile />}></Route>
+                  <Route path="manage-all-order" element={<ManageAllOrder />}></Route>
+                  <Route path="manage-users" element={<ManageUsers />}></Route>
                   <Route path="my-orders" element={<MyOrder />}></Route>
                   <Route path="make-admin" element={<MakeAdmin />}></Route>
                   <Route path="manage-products" element={<ManageProducts />}></Route>
@@ -56,7 +67,7 @@ const App = () => {
 
                <Route path="/login" element={<LoginPage />}></Route>
                <Route
-                  path="/purchase"
+                  path="/purchase/:id"
                   element={
                      <PrivateAuth>
                         <PurchasePage />
