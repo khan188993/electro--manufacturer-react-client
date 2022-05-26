@@ -23,7 +23,7 @@
         <li><b>NodeJs</b></li>
         <li><b>JWT</b></li>
         <li><b>ReactJS</b></li>
-        <li><b>Bootstrap</b></li>
+        <li><b>Tailwind CSS</b></li>
         <li><b>Firebase Authentication</b></li>
         <li><b>React Hot Toast</b></li>    
 </ol>
