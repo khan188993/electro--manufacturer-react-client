@@ -22,6 +22,7 @@ import PrivateAuth from './PrivateRoute/PrivateAuth';
 import Loading from './Components/Loading/Loading';
 import ManageAllOrder from './pages/Dashboard/ManageAllOrders/ManageAllOrder';
 import ManageUsers from './pages/Dashboard/ManageUsers/ManageUsers';
+import AddReview from './pages/Dashboard/AddReview/AddReview';
 
 const App = () => {
    //use query fetch product data 
@@ -58,9 +59,11 @@ const App = () => {
                   }
                >
                   <Route path="my-profile" element={<MyProfile />}></Route>
+                  <Route path="my-orders" element={<MyOrder />}></Route>
+                  <Route path="add-review" element={<AddReview />}></Route>
+
                   <Route path="manage-all-order" element={<ManageAllOrder />}></Route>
                   <Route path="manage-users" element={<ManageUsers />}></Route>
-                  <Route path="my-orders" element={<MyOrder />}></Route>
                   <Route path="make-admin" element={<MakeAdmin />}></Route>
                   <Route path="manage-products" element={<ManageProducts />}></Route>
                </Route>

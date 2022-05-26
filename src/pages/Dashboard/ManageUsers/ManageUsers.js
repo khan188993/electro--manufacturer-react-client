@@ -6,7 +6,7 @@ import UserRow from './UserRow/UserRow';
 const ManageUsers = () => {
    // http://localhost:5000/users
    //all order fetching
-   const { data: users, isLoading: usersLoading, refetch: orderRefetch } = useQuery('users', () => fetch(`http://localhost:5000/users`).then((res) => res.json()));
+   const { data: users, isLoading: usersLoading, refetch: usersRefetch } = useQuery('users', () => fetch(`http://localhost:5000/users`).then((res) => res.json()));
 
    if (usersLoading) {
       return <Loading />;
@@ -29,7 +29,7 @@ const ManageUsers = () => {
                </thead>
                <tbody>
                   {
-                      users.map((user,index)=><UserRow key={user._id} index={index} user={user} />)
+                      users.map((user,index)=><UserRow usersRefetch={usersRefetch} key={user._id} index={index} user={user} />)
                   }
                </tbody>
             </table>
