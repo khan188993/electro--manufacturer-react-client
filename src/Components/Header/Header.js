@@ -40,8 +40,8 @@ const Header = () => {
                   <Link to="/" className="btn btn-secondary">
                      {user.displayName}
                   </Link>
-                  <div class="avatar">
-                     <div class="w-10 rounded-full">
+                  <div className="avatar">
+                     <div className="w-10 rounded-full">
                         <img src={user.photoURL || 'https://api.lorem.space/image/face?hash=47449'} />
                      </div>
                   </div>
@@ -81,7 +81,7 @@ const Header = () => {
                </Link>
             </div>
             {pathname == '/dashboard' && (
-               <label for="my-drawer-2" class="btn btn-primary lg:hidden">
+               <label htmlFor="my-drawer-2" className="btn btn-primary lg:hidden">
                   Open Dashboard
                </label>
             )}

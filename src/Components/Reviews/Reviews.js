@@ -6,7 +6,7 @@ import SingleReview from './SingleReview/SingleReview'
 const Reviews = () => {
 
     //all order fetching
-   const { data: reviews, isLoading: reviewsLoading, refetch: reviewsRefetch } = useQuery('reviews', () => fetch(`http://localhost:5000/reviews`).then((res) => res.json()));
+   const { data: reviews, isLoading: reviewsLoading, refetch: reviewsRefetch } = useQuery('reviews', () => fetch(`https://electro-product-1020.herokuapp.com/reviews`).then((res) => res.json()));
 
    if (reviewsLoading) {
       return <Loading />;
@@ -24,7 +24,7 @@ const Reviews = () => {
             }
             </div>
             <div className="all-review-btn text-center mt-10">
-               <button class="btn btn-primary">View All Review</button>
+               <button className="btn btn-primary">View All Review</button>
             </div>
         </section>
     )

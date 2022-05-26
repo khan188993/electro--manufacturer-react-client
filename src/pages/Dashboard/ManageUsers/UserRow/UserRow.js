@@ -2,7 +2,7 @@ import React from 'react';
 
 const UserRow = ({ user, index,usersRefetch }) => {
    const deleteUser = (email) => {
-      fetch(`http://localhost:5000/delete-users/${email}`, {
+      fetch(`https://electro-product-1020.herokuapp.com/delete-users/${email}`, {
          method: 'DELETE',
       })
       .then(res=>res.json())

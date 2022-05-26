@@ -5,7 +5,7 @@ import { useForm } from 'react-hook-form';
 import auth from '../../Firebase/Firebase.init';
 import toast from 'react-hot-toast';
 import Loading from '../../Components/Loading/Loading';
-
+// https://electro-product-1020.herokuapp.com/
 const LoginPage = () => {
    const [signInWithGoogle, gUser, gLoading, gError] = useSignInWithGoogle(auth);
    const [signInWithEmailAndPassword, user, loading, error] = useSignInWithEmailAndPassword(auth);
@@ -60,7 +60,7 @@ const LoginPage = () => {
                   <input
                      type="email"
                      placeholder="Enter Your Email"
-                     class=" mb-8 input input-bordered input-primary w-full lg:w-[500px]"
+                     className=" mb-8 input input-bordered input-primary w-full lg:w-[500px]"
                      {...register('email', {
                         required: {
                            value: true,
@@ -81,7 +81,7 @@ const LoginPage = () => {
                   <input
                      type="password"
                      placeholder="Enter Your Password"
-                     class=" mb-8 input input-bordered input-primary w-full lg:w-[500px]"
+                     className=" mb-8 input input-bordered input-primary w-full lg:w-[500px]"
                      {...register('password', {
                         required: {
                            value: true,
@@ -109,8 +109,8 @@ const LoginPage = () => {
                   </button>
                </div>
                <div className="flex justify-center">
-                  <div class="flex flex-col w-[600px] border-opacity-50">
-                     <div class="divider">OR</div>
+                  <div className="flex flex-col w-[600px] border-opacity-50">
+                     <div className="divider">OR</div>
                   </div>
                </div>
                <div className="google text-center">

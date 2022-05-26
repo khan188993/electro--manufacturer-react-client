@@ -10,10 +10,10 @@ const ContactUs = () => {
             {/* AiFillFlag AiFillProject IoIosPeople BsStars */}
             <div className="form text-center">
                <form action="">
-                  <input type="text" placeholder="Your Name" class=" mb-8 input input-bordered input-primary w-full lg:w-[500px]" /><br/>
-                  <input type="email" placeholder="Your Email" class=" mb-8 input input-bordered input-primary w-full lg:w-[500px]" /><br/>
-                  <input type="text" placeholder="Subject" class=" mb-8 input input-bordered input-primary w-full lg:w-[500px]" /><br/>
-                  <textarea placeholder="Messages.." class="textarea textarea-primary mb-8 w-full lg:w-[500px]" /><br/>
+                  <input type="text" placeholder="Your Name" className=" mb-8 input input-bordered input-primary w-full lg:w-[500px]" /><br/>
+                  <input type="email" placeholder="Your Email" className=" mb-8 input input-bordered input-primary w-full lg:w-[500px]" /><br/>
+                  <input type="text" placeholder="Subject" className=" mb-8 input input-bordered input-primary w-full lg:w-[500px]" /><br/>
+                  <textarea placeholder="Messages.." className="textarea textarea-primary mb-8 w-full lg:w-[500px]" /><br/>
                   <input type="submit" value='Submit' className="btn-secondary mb-8 btn btn-xs sm:btn-sm md:btn-md lg:btn-lg " />
                </form>
             </div>

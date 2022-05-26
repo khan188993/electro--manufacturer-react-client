@@ -29,7 +29,7 @@ import AlertModal from './Components/AlertModal/AlertModal';
 const App = () => {
    //use query fetch product data 
    // const proxy = 'http://localhost:5000';
-   const { data: products, isLoading: productLoading , refetch: productRefetch } = useQuery('products', () => fetch(`http://localhost:5000/products`)
+   const { data: products, isLoading: productLoading , refetch: productRefetch } = useQuery('products', () => fetch(`https://electro-product-1020.herokuapp.com/products`)
         .then(res => res.json()))
 
    

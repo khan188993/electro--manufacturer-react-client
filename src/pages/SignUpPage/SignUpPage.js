@@ -57,7 +57,7 @@ const SignUpPage = () => {
                   <input
                      type="text"
                      placeholder="Enter Your Name"
-                     class=" mb-8 input input-bordered input-primary w-full lg:w-[500px]"
+                     className=" mb-8 input input-bordered input-primary w-full lg:w-[500px]"
                      {...register('name', {
                         required: {
                            value: true,
@@ -70,7 +70,7 @@ const SignUpPage = () => {
                   <input
                      type="text"
                      placeholder="Enter Your img url"
-                     class=" mb-8 input input-bordered input-primary w-full lg:w-[500px]"
+                     className=" mb-8 input input-bordered input-primary w-full lg:w-[500px]"
                      {...register('photoUrl')}
                   />
                   <label className="label">{errors.name?.type === 'required' && <span className="label-text-alt text-red-500">{errors.name.message}</span>}</label>
@@ -78,7 +78,7 @@ const SignUpPage = () => {
                   <input
                      type="email"
                      placeholder="Enter Your Email"
-                     class=" mb-8 input input-bordered input-primary w-full lg:w-[500px]"
+                     className=" mb-8 input input-bordered input-primary w-full lg:w-[500px]"
                      {...register('email', {
                         required: {
                            value: true,
@@ -98,7 +98,7 @@ const SignUpPage = () => {
                   <input
                      type="password"
                      placeholder="Enter Your Password"
-                     class=" mb-8 input input-bordered input-primary w-full lg:w-[500px]"
+                     className=" mb-8 input input-bordered input-primary w-full lg:w-[500px]"
                      {...register('password', {
                         required: {
                            value: true,
@@ -125,8 +125,8 @@ const SignUpPage = () => {
                   </button>
                </div>
                <div className="flex justify-center">
-                  <div class="flex flex-col w-[600px] border-opacity-50">
-                     <div class="divider">OR</div>
+                  <div className="flex flex-col w-[600px] border-opacity-50">
+                     <div className="divider">OR</div>
                   </div>
                </div>
                <div className="google text-center">

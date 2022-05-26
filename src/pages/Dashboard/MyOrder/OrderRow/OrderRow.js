@@ -5,7 +5,7 @@ const OrderRow = ({ order, index, orderRefetch }) => {
    const deleteOrder = (id) => {
       const confirmMessage = window.confirm('Are you sure to delete?');
       if (confirmMessage) {
-         fetch(`http://localhost:5000/delete-order/${id}`, {
+         fetch(`https://electro-product-1020.herokuapp.com/delete-order/${id}`, {
             method: 'DELETE',
          })
             .then((res) => res.json())
@@ -25,7 +25,7 @@ const OrderRow = ({ order, index, orderRefetch }) => {
          <td>{order?.product_per_price}</td>
          <td>{order?.total_price}</td>
          <td>
-            <button onClick={() => deleteOrder(order?.product_id)} class="btn btn-error">
+            <button onClick={() => deleteOrder(order?.product_id)} className="btn btn-error">
                Delete Order
             </button>
          </td>
