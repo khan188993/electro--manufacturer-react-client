@@ -1,17 +1,19 @@
 import React from 'react';
 
-const OrderRow = ({ order, index,orderRefetch }) => {
+const OrderRow = ({ order, index, orderRefetch }) => {
    //deleting order
    const deleteOrder = (id) => {
-      console.log(id);
-      fetch(`http://localhost:5000/delete-order/${id}`, {
-         method: 'DELETE',
-      })
-         .then((res) => res.json())
-         .then((data) => {
-             console.log(data);
-             orderRefetch();
-         });
+      const confirmMessage = window.confirm('Are you sure to delete?');
+      if (confirmMessage) {
+         fetch(`http://localhost:5000/delete-order/${id}`, {
+            method: 'DELETE',
+         })
+            .then((res) => res.json())
+            .then((data) => {
+               console.log(data);
+               orderRefetch();
+            });
+      }
    };
    return (
       <tr>

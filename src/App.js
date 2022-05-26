@@ -23,6 +23,7 @@ import Loading from './Components/Loading/Loading';
 import ManageAllOrder from './pages/Dashboard/ManageAllOrders/ManageAllOrder';
 import ManageUsers from './pages/Dashboard/ManageUsers/ManageUsers';
 import AddReview from './pages/Dashboard/AddReview/AddReview';
+import AlertModal from './Components/AlertModal/AlertModal';
 
 const App = () => {
    //use query fetch product data 
@@ -58,6 +59,7 @@ const App = () => {
                      </PrivateAuth>
                   }
                >
+                  <Route index element={<MyProfile />}></Route>
                   <Route path="my-profile" element={<MyProfile />}></Route>
                   <Route path="my-orders" element={<MyOrder />}></Route>
                   <Route path="add-review" element={<AddReview />}></Route>
